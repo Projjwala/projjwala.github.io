@@ -8,7 +8,7 @@ submit.addEventListener('click', e => {
     $('#form-box').fadeOut(700);
 
     $.ajax({
-        url: "/file_uploader.php",
+        url: "https://damp-bayou-01015.herokuapp.com/file_uploader.php",
         type: "POST",
         data: new FormData(form),
         contentType: false,
