@@ -12,6 +12,6 @@ submit.addEventListener('click', e => {
                         method: 'POST',
                         body: new FormData(form)
                     })
-                    .then(response => window.location.replace("success.php"))
-                    .catch(error => window.location.replace("error.php"))
+                    .then(response => window.location.replace("success.html"))
+                    .catch(error => window.location.replace("error.html"))
 })
