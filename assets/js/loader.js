@@ -4,6 +4,6 @@ setTimeout(
 	function()
 	{
 		document.getElementById("loader").remove();
-		$('#form-box').fadeIn(1000);
+		$('#form-box').fadeIn(400);
 	}
 , 2000);
