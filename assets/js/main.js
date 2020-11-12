@@ -5,30 +5,13 @@ const submit = document.getElementById("submit")
 
 submit.addEventListener('click', e => {
     e.preventDefault()
+    $('#loader').fadeIn(300);
     $('#form-box').fadeOut(700);
 
-    $.ajax({
-        url: "https://damp-bayou-01015.herokuapp.com/file_uploader.php",
-        type: "POST",
-        data: new FormData(form),
-        contentType: false,
-        cache: false,
-        processData: false,
-        beforeSend: function() {},
-        success: function(data) {
-            if (data == "DONE") {
-                fetch(scriptURL, {
+    fetch(scriptURL, {
                         method: 'POST',
                         body: new FormData(form)
                     })
-                    .then(response => window.location.replace("success.html"))
-                    .catch(error => window.location.replace("error.html"))
-            } else {
-                window.location.replace("error.php");
-            }
-        },
-        error: function(e) {
-            console.log("error");
-        },
-    });
+                    .then(response => window.location.replace("success.php"))
+                    .catch(error => window.location.replace("error.php"))
 })
